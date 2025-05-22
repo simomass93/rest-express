@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600&display=swap');
+
+:root {
+  --background: 0 0% 100%; /* #ffffff */
+  --foreground: 20 14% 4%; /* #2c2c2c */
+  --muted: 60 5% 96%; /* #f8f6f3 */
+  --muted-foreground: 25 5% 45%; /* #737373 */
+  --popover: 0 0% 100%; /* #ffffff */
+  --popover-foreground: 20 14% 4%; /* #2c2c2c */
+  --card: 0 0% 100%; /* #ffffff */
+  --card-foreground: 20 14% 4%; /* #2c2c2c */
+  --border: 20 6% 90%; /* #e5e7eb */
+  --input: 20 6% 90%; /* #e5e7eb */
+  --primary: 43 74% 66%; /* #d4af37 */
+  --primary-foreground: 0 0% 98%; /* #fafafa */
+  --secondary: 60 5% 96%; /* #f8f6f3 */
+  --secondary-foreground: 24 10% 10%; /* #1a1a1a */
+  --accent: 60 5% 96%; /* #f8f6f3 */
+  --accent-foreground: 24 10% 10%; /* #1a1a1a */
+  --destructive: 0 84% 60%; /* #ef4444 */
+  --destructive-foreground: 60 9% 98%; /* #fefefe */
+  --ring: 20 14% 4%; /* #2c2c2c */
+  --radius: 0.5rem;
+  
+  /* Custom wedding colors */
+  --warm-white: 39 13% 97%; /* #f8f6f3 */
+  --elegant-gold: 43 74% 66%; /* #d4af37 */
+  --rose-antique: 353 28% 82%; /* #e8b4b8 */
+  --charcoal: 0 0% 17%; /* #2c2c2c */
+}
+
+.dark {
+  --background: 240 10% 4%; /* #0a0a0a */
+  --foreground: 0 0% 98%; /* #fafafa */
+  --muted: 240 4% 16%; /* #262626 */
+  --muted-foreground: 240 5% 65%; /* #a3a3a3 */
+  --popover: 240 10% 4%; /* #0a0a0a */
+  --popover-foreground: 0 0% 98%; /* #fafafa */
+  --card: 240 10% 4%; /* #0a0a0a */
+  --card-foreground: 0 0% 98%; /* #fafafa */
+  --border: 240 4% 16%; /* #262626 */
+  --input: 240 4% 16%; /* #262626 */
+  --primary: 43 74% 66%; /* #d4af37 */
+  --primary-foreground: 0 0% 98%; /* #fafafa */
+  --secondary: 240 4% 16%; /* #262626 */
+  --secondary-foreground: 0 0% 98%; /* #fafafa */
+  --accent: 240 4% 16%; /* #262626 */
+  --accent-foreground: 0 0% 98%; /* #fafafa */
+  --destructive: 0 63% 31%; /* #7f1d1d */
+  --destructive-foreground: 0 0% 98%; /* #fafafa */
+  --ring: 240 5% 84%; /* #d4d4d8 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      overflow-y: auto;
+    }
+  }
+
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-dancing {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .bg-warm-white {
+    background-color: hsl(var(--warm-white));
+  }
+
+  .text-elegant-gold {
+    color: hsl(var(--elegant-gold));
+  }
+
+  .bg-elegant-gold {
+    background-color: hsl(var(--elegant-gold));
+  }
+
+  .text-rose-antique {
+    color: hsl(var(--rose-antique));
+  }
+
+  .bg-rose-antique {
+    background-color: hsl(var(--rose-antique));
+  }
+
+  .text-charcoal {
+    color: hsl(var(--charcoal));
+  }
+
+  .bg-charcoal {
+    background-color: hsl(var(--charcoal));
+  }
+
+  .border-elegant-gold {
+    border-color: hsl(var(--elegant-gold));
+  }
+
+  .border-rose-antique {
+    border-color: hsl(var(--rose-antique));
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(40px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px); 
+    }
+    50% { 
+      transform: translateY(-10px); 
+    }
+  }
+}
